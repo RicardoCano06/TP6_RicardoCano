@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página 2</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("E5ftZahp1Mk5wAMtQ");
+    })();
+  </script>
+</head>
+<body>
+  <h1>Formulario de Datos Personales</h1>
+  <form id="personalDataForm">
+    <input type="text" id="firstName" placeholder="Nombre" required>
+    <input type="text" id="lastName" placeholder="Apellido" required>
+    <input type="number" id="age" placeholder="Edad" required>
+    <input type="text" id="address" placeholder="Dirección" required>
+    <input type="tel" id="phone" placeholder="Celular" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="city" placeholder="Ciudad" required>
+    <input type="text" id="country" placeholder="País" required>
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpiar</button>
+  </form>
+  <p id="status-message"></p>
+  <div class="buttons">
+    <button id="paginaPrincipal">Ir a Página Principal</button>
+    <button id="pagina3">Ir a Página 3</button>
+  </div>
+  <script src="JavaScript/pagina2.js"></script>
+</body>
+</html>
