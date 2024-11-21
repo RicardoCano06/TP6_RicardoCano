@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        emailjs.send("service_794rdxp", "template_nhl7nnj", {
+        emailjs.send("service_794rdxp", "template_jyjca9a", {
             firstName: firstName,
             lastName: lastName,
             phone: phone,
