@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Principal</title>
+  <title>Página de Inicio</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
-  <h1>Bienvenido a nuestra página web</h1>
-  <p id="welcomeMessage"></p>
-  <div class="buttons">
-    <button id="pagina2">Ir a Página 2</button>
-    <button id="pagina3">Ir a Página 3</button>
-  </div>
+  <h1>Ingreso a la Página Web</h1>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Usuario" required>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <button type="submit">Ingresar</button>
+  </form>
+  <p id="loginMessage"></p>
   <script src="JavaScript/index.js"></script>
 </body>
 </html>

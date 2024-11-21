@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página 3</title>
+  <title>Página 4</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
@@ -13,16 +13,13 @@
   </script>
 </head>
 <body>
-  <h1>Formulario de Datos Personales</h1>
-  <form id="personalDataForm">
+  <h1>Enviar Mensaje</h1>
+  <form id="messageForm">
     <input type="text" id="firstName" placeholder="Nombre" required>
     <input type="text" id="lastName" placeholder="Apellido" required>
-    <input type="number" id="age" placeholder="Edad" required>
-    <input type="text" id="address" placeholder="Dirección" required>
     <input type="tel" id="phone" placeholder="Celular" required>
     <input type="email" id="email" placeholder="Email" required>
-    <input type="text" id="city" placeholder="Ciudad" required>
-    <input type="text" id="country" placeholder="País" required>
+    <textarea id="message" placeholder="Tu mensaje" required></textarea>
     <button type="submit" class="animated-button">Enviar</button>
     <button type="reset" class="animated-button">Limpiar</button>
   </form>
@@ -30,8 +27,8 @@
   <div class="buttons">
     <button id="loginPage" class="animated-button">Volver al Inicio de Sesión</button>
     <button id="paginaPrincipal" class="animated-button">Ir a Página Principal</button>
-    <button id="pagina4" class="animated-button">Formulario de Mensaje Largo</button>
+    <button id="pagina3" class="animated-button">Formulario de Datos Personales</button>
   </div>
-  <script src="JavaScript/pagina3.js"></script>
+  <script src="JavaScript/pagina4.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Script de página 3 cargado correctamente");
+    console.log("Script de página 4 cargado correctamente");
 
     const loginPageButton = document.getElementById('loginPage');
     const paginaPrincipalButton = document.getElementById('paginaPrincipal');
-    const pagina4Button = document.getElementById('pagina4');
+    const pagina3Button = document.getElementById('pagina3');
 
     // Navegación entre páginas
     if (loginPageButton) {
@@ -18,54 +18,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (pagina4Button) {
-        pagina4Button.addEventListener('click', function() {
-            window.location.href = 'pagina4.html';
+    if (pagina3Button) {
+        pagina3Button.addEventListener('click', function() {
+            window.location.href = 'pagina3.html';
         });
     }
 
-    document.getElementById('personalDataForm').addEventListener('submit', function(event) {
+    // Inicializar EmailJS con tu public key
+    emailjs.init("E5ftZahp1Mk5wAMtQ");
+
+    document.getElementById('messageForm').addEventListener('submit', function(event) {
         event.preventDefault();
         console.log("Formulario enviado");
 
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
-        const age = document.getElementById('age').value;
-        const address = document.getElementById('address').value;
         const phone = document.getElementById('phone').value;
         const email = document.getElementById('email').value;
-        const city = document.getElementById('city').value;
-        const country = document.getElementById('country').value;
+        const message = document.getElementById('message').value;
 
         console.log("Datos del formulario:", {
             firstName: firstName,
             lastName: lastName,
-            age: age,
-            address: address,
             phone: phone,
             email: email,
-            city: city,
-            country: country
+            message: message
         });
 
         emailjs.send("service_ab8c7ns", "template_qdwwn9q", {
             firstName: firstName,
             lastName: lastName,
-            age: age,
-            address: address,
             phone: phone,
             email: email,
-            city: city,
-            country: country
+            message: message
         })
         .then((response) => {
             console.log("Correo enviado con éxito", response.status, response.text);
-            alert("Datos enviados con éxito.");
-            document.getElementById('personalDataForm').reset();
+            alert("Mensaje enviado con éxito.");
+            document.getElementById('messageForm').reset();
         })
         .catch((error) => {
             console.error("Error al enviar el mensaje:", error);
-            alert("Hubo un error al enviar los datos.");
+            alert("Hubo un error al enviar el mensaje.");
         });
     });
 });

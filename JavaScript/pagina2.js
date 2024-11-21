@@ -1,64 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Script de página 2 cargado correctamente");
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    const personalWelcomeMessage = document.getElementById('personalWelcomeMessage');
 
-    const paginaPrincipalButton = document.getElementById('paginaPrincipal');
-    const pagina3Button = document.getElementById('pagina3');
+    // Display welcome message
+    welcomeMessage.innerText = "Bienvenido a la página principal.";
 
-    // Navegación entre páginas
-    if (paginaPrincipalButton) {
-        paginaPrincipalButton.addEventListener('click', function() {
-            window.location.href = 'index.html';
-        });
+    // Ask for the user's name
+    const userName = prompt("Bienvenido! Por favor, ingrese su nombre:");
+
+    if (userName) {
+        // Display personalized welcome message
+        personalWelcomeMessage.innerText = `Bienvenido, ${userName}!`;
+    } else {
+        personalWelcomeMessage.innerText = "No se ingresó ningún nombre.";
     }
 
-    if (pagina3Button) {
-        pagina3Button.addEventListener('click', function() {
-            window.location.href = 'pagina3.html';
-        });
-    }
+    // Navigation buttons
+    document.getElementById('loginPage').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
 
-    document.getElementById('personalDataForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        console.log("Formulario enviado");
+    document.getElementById('pagina3').addEventListener('click', function() {
+        window.location.href = 'pagina3.html';
+    });
 
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const age = document.getElementById('age').value;
-        const address = document.getElementById('address').value;
-        const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
-        const city = document.getElementById('city').value;
-        const country = document.getElementById('country').value;
-
-        console.log("Datos del formulario:", {
-            firstName: firstName,
-            lastName: lastName,
-            age: age,
-            address: address,
-            phone: phone,
-            email: email,
-            city: city,
-            country: country
-        });
-
-        emailjs.send("service_ab8c7ns", "template_qdwwn9q", {
-            firstName: firstName,
-            lastName: lastName,
-            age: age,
-            address: address,
-            phone: phone,
-            email: email,
-            city: city,
-            country: country
-        })
-        .then((response) => {
-            console.log("Correo enviado con éxito", response.status, response.text);
-            document.getElementById('status-message').innerText = "Datos enviados con éxito.";
-            document.getElementById('personalDataForm').reset();
-        })
-        .catch((error) => {
-            console.error("Error al enviar los datos:", error);
-            document.getElementById('status-message').innerText = "Hubo un error al enviar los datos.";
-        });
+    document.getElementById('pagina4').addEventListener('click', function() {
+        window.location.href = 'pagina4.html';
     });
 });
