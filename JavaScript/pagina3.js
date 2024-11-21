@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("Script de página 3 cargado correctamente");
+
     const paginaPrincipalButton = document.getElementById('paginaPrincipal');
     const pagina2Button = document.getElementById('pagina2');
 
@@ -15,10 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    emailjs.init("JQ-dOCicUz8NaQvUQ");
+    // Inicializar EmailJS con tu public key
+    emailjs.init("E5ftZahp1Mk5wAMtQ");
 
-    document.getElementById('messageForm')?.addEventListener('submit', function(event) {
+    document.getElementById('messageForm').addEventListener('submit', function(event) {
         event.preventDefault();
+        console.log("Formulario enviado");
 
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
@@ -26,14 +30,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        emailjs.send("service_794rdxp", "template_jyjca9a", {
+        console.log("Datos del formulario:", {
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone,
+            email: email,
+            message: message
+        });
+
+        emailjs.send("service_ab8c7ns", "template_jyjca9a", {
             firstName: firstName,
             lastName: lastName,
             phone: phone,
             email: email,
             message: message
         })
-        .then(() => {
+        .then((response) => {
+            console.log("Correo enviado con éxito", response.status, response.text);
             document.getElementById('status-message').innerText = "Mensaje enviado con éxito.";
             document.getElementById('messageForm').reset();
         })
