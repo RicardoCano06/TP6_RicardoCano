@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             message: message
         });
 
-        emailjs.send("service_ab8c7ns", "template_qdwwn9q", {
+        emailjs.send("service_ab8c7ns", "template_jyjca9a", {
             firstName: firstName,
             lastName: lastName,
             phone: phone,
